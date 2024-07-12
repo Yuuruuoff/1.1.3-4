@@ -39,8 +39,6 @@ public class Util {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(url, user, password);
-            Statement st = connection.createStatement();
-            ResultSet rs = st.executeQuery("SELECT VERSION()");
 
         } catch (SQLException ex) {
 

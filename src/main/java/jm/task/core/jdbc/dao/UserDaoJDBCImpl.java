@@ -1,17 +1,22 @@
 package jm.task.core.jdbc.dao;
 
 import jm.task.core.jdbc.model.User;
+import jm.task.core.jdbc.util.LoggerClass;
 import jm.task.core.jdbc.util.Util;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class UserDaoJDBCImpl implements UserDao {
 
-    private Connection connection = Util.getInstance().getSource();
+    private final Connection connection = Util.getInstance().getSource();
 
     private Statement statement = null;
+
+    private final Logger logger = new LoggerClass().getLogger();
 
     public UserDaoJDBCImpl() {
         try {
@@ -24,16 +29,18 @@ public class UserDaoJDBCImpl implements UserDao {
     public void createUsersTable() {
         try {
             statement.execute("create table Users (id bigint GENERATED ALWAYS AS IDENTITY, name varchar, lastname varchar, age smallint)");
+            logger.info("Table created : Users");
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Error creating table", e);
         }
     }
 
     public void dropUsersTable() {
         try {
             statement.execute("drop table Users");
+            logger.info("Users table dropped");
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Error droping table", e.getMessage());
         }
     }
 
@@ -46,8 +53,9 @@ public class UserDaoJDBCImpl implements UserDao {
             preparedStatement.setByte(3, age);
             preparedStatement.executeUpdate();
             preparedStatement.close();
+            logger.info("User saved : " + name + " " + lastName + " " + age);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Error saving user", e);
         }
     }
 
@@ -58,8 +66,9 @@ public class UserDaoJDBCImpl implements UserDao {
             preparedStatement.setLong(1, id);
             preparedStatement.executeUpdate();
             preparedStatement.close();
+            logger.info("User removed : " + id);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Error removing user", e);
         }
     }
 
@@ -85,5 +94,6 @@ public class UserDaoJDBCImpl implements UserDao {
     public void cleanUsersTable() {
         dropUsersTable();
         createUsersTable();
+        logger.info("Users table cleaned");
     }
 }

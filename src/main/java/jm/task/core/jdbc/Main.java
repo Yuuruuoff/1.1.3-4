@@ -8,7 +8,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<User> users;
 
         UserService userService = new UserServiceImpl();
 
@@ -21,14 +20,14 @@ public class Main {
         userService.saveUser("German", "Zhukov", (byte) 11);
         userService.saveUser("Vasya", "Atletov", (byte) 12);
 
-        users = userService.getAllUsers();
+        List<User> users = userService.getAllUsers();
         for (User user : users) {
             System.out.println(user.getId() + " " + user.getName() + " " + user.getLastName() + " " + user.getAge());
         }
 
         userService.cleanUsersTable();
 
-        userService.dropUsersTable();
+       // userService.dropUsersTable();
 
     }
 }

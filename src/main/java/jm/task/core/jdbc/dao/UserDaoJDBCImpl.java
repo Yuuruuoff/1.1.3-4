@@ -73,8 +73,8 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public List<User> getAllUsers() {
-        List<User> users = new ArrayList<User>();
-        ResultSet resultSet = null;
+        List<User> users = new ArrayList<>();
+        ResultSet resultSet;
         try {
             resultSet = statement.executeQuery("SELECT * FROM Users");
             while (resultSet.next()) {
@@ -92,8 +92,11 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void cleanUsersTable() {
-        dropUsersTable();
-        createUsersTable();
+        try {
+            statement.execute("TRUNCATE TABLE Users");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         logger.info("Users table cleaned");
     }
 }

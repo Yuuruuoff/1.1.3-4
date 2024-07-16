@@ -1,20 +1,14 @@
-июл. 16, 2024 3:45:32 PM jm.task.core.jdbc.dao.UserDaoJDBCImpl dropUsersTable
-SEVERE: Error droping table
-июл. 16, 2024 3:45:32 PM jm.task.core.jdbc.dao.UserDaoJDBCImpl createUsersTable
+июл. 16, 2024 6:02:31 PM jm.task.core.jdbc.dao.UserDaoJDBCImpl dropUsersTable
+INFO: Users table dropped
+июл. 16, 2024 6:02:31 PM jm.task.core.jdbc.dao.UserDaoJDBCImpl createUsersTable
 INFO: Table created : Users
-июл. 16, 2024 3:45:32 PM jm.task.core.jdbc.dao.UserDaoJDBCImpl saveUser
+июл. 16, 2024 6:02:31 PM jm.task.core.jdbc.dao.UserDaoJDBCImpl saveUser
 INFO: User saved : Yuri Klabukov 24
-июл. 16, 2024 3:45:32 PM jm.task.core.jdbc.dao.UserDaoJDBCImpl saveUser
+июл. 16, 2024 6:02:31 PM jm.task.core.jdbc.dao.UserDaoJDBCImpl saveUser
 INFO: User saved : Kolya Smirnov 10
-июл. 16, 2024 3:45:32 PM jm.task.core.jdbc.dao.UserDaoJDBCImpl saveUser
+июл. 16, 2024 6:02:31 PM jm.task.core.jdbc.dao.UserDaoJDBCImpl saveUser
 INFO: User saved : German Zhukov 11
-июл. 16, 2024 3:45:32 PM jm.task.core.jdbc.dao.UserDaoJDBCImpl saveUser
+июл. 16, 2024 6:02:31 PM jm.task.core.jdbc.dao.UserDaoJDBCImpl saveUser
 INFO: User saved : Vasya Atletov 12
-июл. 16, 2024 3:45:32 PM jm.task.core.jdbc.dao.UserDaoJDBCImpl dropUsersTable
-INFO: Users table dropped
-июл. 16, 2024 3:45:32 PM jm.task.core.jdbc.dao.UserDaoJDBCImpl createUsersTable
-INFO: Table created : Users
-июл. 16, 2024 3:45:32 PM jm.task.core.jdbc.dao.UserDaoJDBCImpl cleanUsersTable
+июл. 16, 2024 6:02:31 PM jm.task.core.jdbc.dao.UserDaoJDBCImpl cleanUsersTable
 INFO: Users table cleaned
-июл. 16, 2024 3:45:32 PM jm.task.core.jdbc.dao.UserDaoJDBCImpl dropUsersTable
-INFO: Users table dropped

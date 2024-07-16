@@ -6,11 +6,11 @@ import java.util.logging.Logger;
 
 public class Util {
 
-    private static final String url = "jdbc:postgresql://localhost:5438/";
+    private static final String URL = "jdbc:postgresql://localhost:5438/";
 
-    private static final String user = "postgres";
+    private static final String USER = "postgres";
 
-    private static final String password = "123qwe";
+    private static final String PASSWORD = "123qwe";
 
     private static Util instance;
 
@@ -38,7 +38,7 @@ public class Util {
 
         Connection connection = null;
         try {
-            connection = DriverManager.getConnection(url, user, password);
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
 
         } catch (SQLException ex) {
 

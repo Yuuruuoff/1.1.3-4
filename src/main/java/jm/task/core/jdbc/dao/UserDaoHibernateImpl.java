@@ -6,19 +6,15 @@ import jm.task.core.jdbc.util.Util;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.cfg.Environment;
-
-import java.io.UncheckedIOException;
 import java.util.List;
-import java.util.Properties;
+
 import java.util.logging.Logger;
 
 public class UserDaoHibernateImpl implements UserDao {
 
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
-    private Logger logger = new LoggerClass().getLogger();
+    private final Logger logger = new LoggerClass().getLogger();
 
     public UserDaoHibernateImpl() {
         sessionFactory = Util.getInstance().getSourceSessionFactory();

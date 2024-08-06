@@ -1,0 +1,3 @@
+target/
+src/main/java/jm/task/core/jdbc/logs/
+src/main/java/jm/task/core/jdbc/properties/
